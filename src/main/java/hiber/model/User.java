@@ -23,6 +23,16 @@ public class User {
    @JoinColumn(name="car", referencedColumnName ="id")
    private Car car;
 
+   @Override
+   public String toString() {
+      return "User{" +
+              "firstName='" + firstName + '\'' +
+              ", lastName='" + lastName + '\'' +
+              ", email='" + email + '\'' +
+              ", car=" + car +
+              '}';
+   }
+
    public User() {}
    
    public User(String firstName, String lastName, String email) {

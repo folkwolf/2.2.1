@@ -16,6 +16,9 @@ public class Car {
     @Column(name="series", nullable = false)
     private int series;
 
+    @OneToOne(mappedBy = "car")
+    private User master;
+
     public Car(String model, int series) {
         this.model = model;
         this.series = series;
@@ -46,6 +49,14 @@ public class Car {
 
     public void setSeries(int series) {
         this.series = series;
+    }
+
+    public User getMaster() {
+        return master;
+    }
+
+    public void setMaster(User master) {
+        this.master = master;
     }
 
     @Override
